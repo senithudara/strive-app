@@ -34,27 +34,20 @@ class TasksAdapter(private var tasks: List<Task>, private val context: Context) 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task = tasks[position]
 
-        // Set task title and content
         holder.titleTextView.text = task.title
         holder.contentTextView.text = task.content
 
-        // Check if the task is completed
         holder.completedCheckbox.isChecked = task.completed
         if (task.completed) {
-            // Apply strikethrough if task is completed
             holder.titleTextView.paintFlags = holder.titleTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             holder.contentTextView.paintFlags = holder.contentTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         } else {
-            // Remove strikethrough if task is not completed
             holder.titleTextView.paintFlags = holder.titleTextView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
             holder.contentTextView.paintFlags = holder.contentTextView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
 
-        // Set listener for checkbox state change
         holder.completedCheckbox.setOnCheckedChangeListener { _, isChecked ->
-            // Update task completion status
             task.completed = isChecked
-            // Update UI to reflect completion status
             if (isChecked) {
                 holder.titleTextView.paintFlags = holder.titleTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                 holder.contentTextView.paintFlags = holder.contentTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG

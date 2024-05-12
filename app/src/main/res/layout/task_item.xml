@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius = "8dp"
+    app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    app:cardUseCompatPadding="true"
-    >
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,17 +15,20 @@
         android:padding="16dp">
 
         <RelativeLayout
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:orientation = "vertical"
-            android:padding="8dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginStart="-10dp">
 
             <TextView
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Title"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat_semibold"
+                android:text="Title"
                 android:textColor="@color/blue"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -38,7 +40,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="30dp"
                 android:src="@drawable/pencil_edit_button"
-                />
+                android:tint="@android:color/white" />
 
             <ImageView
                 android:id="@+id/deleteButton"
@@ -46,42 +48,26 @@
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/delete_button"
-                />
-
+                android:tint="@android:color/white" />
 
         </RelativeLayout>
 
         <TextView
             android:id="@+id/contentTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="221dp"
             android:layout_height="wrap_content"
-            android:text="Content"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat_medium"
             android:maxLines="3"
-            android:layout_marginTop="4dp"/>
+            android:text="Content" />
 
-        <TextView
-            android:id="@+id/dueDateTextView"
+        <CheckBox
+            android:id="@+id/completedCheckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Due Date: "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:id="@+id/priorityTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Priority: "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"/>
-
+            android:layout_marginEnd="8dp"
+            android:checked="false" />
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>

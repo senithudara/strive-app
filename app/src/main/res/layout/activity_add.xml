@@ -10,7 +10,6 @@
     tools:context=".AddActivity">
 
     <TextView
-
         android:id="@+id/addTaskHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,11 +24,12 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_done_all_24"
-        android:layout_alignParentEnd="true"
         android:layout_alignTop="@id/addTaskHeading"
-        android:layout_marginEnd="6dp"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="355dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/baseline_done_all_24"
+        android:tint="@android:color/white" />
 
     <EditText
         android:id="@+id/titleEditText"
@@ -44,6 +44,19 @@
         android:padding="12dp"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/titleCharacterCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleEditText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-17dp"
+        android:layout_marginEnd="10dp"
+        android:paddingEnd="8dp"
+        android:text="0/60"
+        android:textSize="12sp"
+        android:textColor="@color/gray"/>
+
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
@@ -57,29 +70,18 @@
         android:padding="12dp"
         android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/dueDateEditText"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/contentCharacterCount"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/contentEditText"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/blue_border"
-        android:fontFamily="@font/montserrat"
-        android:hint="Enter the due date"
-        android:inputType="date"
-        android:padding="12dp"
-        android:textSize="18sp" />
-
-    <Spinner
-        android:id="@+id/prioritySpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dueDateEditText"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/blue_border"
-        android:fontFamily="@font/montserrat"
-        android:padding="12dp"
-        android:textSize="18sp" />
-
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-19dp"
+        android:layout_marginEnd="8dp"
+        android:paddingEnd="8dp"
+        android:text="0/200"
+        android:textSize="12sp"
+        android:textColor="@color/gray"/>
+    />
 
 </RelativeLayout>
